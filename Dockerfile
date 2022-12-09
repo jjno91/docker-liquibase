@@ -1,2 +1,3 @@
 FROM alpine
-RUN apk add --no-cache liquibase
+RUN apk update
+RUN apk add liquibase
