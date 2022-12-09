@@ -1,0 +1,1 @@
+liquibase --changelog-file=liquibase.yaml update --url $URL --username $USERNAME --password $PASSWORD
