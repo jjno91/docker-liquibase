@@ -6,5 +6,6 @@ RUN wget -q -O liquibase-${LIQUIBASE_VERSION}.tar.gz "https://github.com/liquiba
 RUN tar -xzf liquibase-${LIQUIBASE_VERSION}.tar.gz
 RUN rm liquibase-${LIQUIBASE_VERSION}.tar.gz
 COPY entrypoint.sh .
+COPY liquibase sql
 #ENTRYPOINT ["./entrypoint.sh"]
 ENTRYPOINT ["pwd"]
