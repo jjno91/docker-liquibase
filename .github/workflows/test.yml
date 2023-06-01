@@ -7,5 +7,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      - run: curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
+      - run: curl https://packages.microsoft.com/config/ubuntu/$(lsb_release -rs)/prod.list | sudo tee /etc/apt/sources.list.d/msprod.list
+      - run: sudo apt-get update
+      - run: sudo apt-get install -y mssql-server
+      - run: sudo systemctl start mssql-server
       - run: docker build -t this .
       - run: docker run this
