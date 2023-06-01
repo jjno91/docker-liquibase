@@ -17,4 +17,4 @@ COPY entrypoint.sh .
 COPY liquibase sql
 
 #ENTRYPOINT ["./entrypoint.sh"]
-ENTRYPOINT ["pwd"]
+ENTRYPOINT ["ls"]
