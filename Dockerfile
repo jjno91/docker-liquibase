@@ -13,8 +13,7 @@ RUN mkdir -p $LIQUIBASE_HOME && \
     ln -s $LIQUIBASE_HOME/liquibase /usr/local/bin/liquibase && \
     rm /tmp/liquibase.tar.gz
 
-COPY entrypoint.sh .
-COPY liquibase sql
+COPY . .
 
 #ENTRYPOINT ["./entrypoint.sh"]
 ENTRYPOINT ["ls"]
