@@ -1,6 +1,5 @@
 #!/bin/bash
 
-cd sql || exit 1
-liquibase --changelog-file=liquibase/liquibase.yaml update --url "${URL}" --username "${USERNAME}" --password "${PASSWORD}"
+liquibase --changelog-file=liquibase/1-client.sql update --url "${URL}" --username "${USERNAME}" --password "${PASSWORD}"
 
 # start your application
