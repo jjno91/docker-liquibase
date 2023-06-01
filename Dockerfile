@@ -16,4 +16,5 @@ RUN mkdir -p $LIQUIBASE_HOME && \
 COPY entrypoint.sh .
 COPY liquibase sql
 
-ENTRYPOINT ["./entrypoint.sh"]
+#ENTRYPOINT ["./entrypoint.sh"]
+ENTRYPOINT ["pwd"]
