@@ -1,6 +1,4 @@
-FROM alpine
-
-RUN apk add --no-cache wget
+FROM node:18
 
 # https://github.com/liquibase/liquibase/releases
 ENV LIQUIBASE_VERSION=4.21.1
@@ -13,6 +11,6 @@ RUN mkdir -p $LIQUIBASE_HOME && \
     ln -s $LIQUIBASE_HOME/liquibase /usr/local/bin/liquibase && \
     rm /tmp/liquibase.tar.gz
 
-COPY . .
+COPY . /
 
-CMD ["/entrypoint.sh"]
+ENTRYPOINT ["/main.sh"]
