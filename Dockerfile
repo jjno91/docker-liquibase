@@ -3,7 +3,7 @@ FROM alpine
 RUN apk add --no-cache wget
 
 # https://github.com/liquibase/liquibase/releases
-ENV LIQUIBASE_VERSION=4.22.0
+ENV LIQUIBASE_VERSION=4.21.1
 ENV LIQUIBASE_HOME=/opt/liquibase
 
 RUN mkdir -p $LIQUIBASE_HOME && \
