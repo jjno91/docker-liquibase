@@ -8,7 +8,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - run: docker run -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=root' -p 1433:1433 --name sql_server -d mcr.microsoft.com/mssql/server:2019-latest
-      - run: sqlcmd -S localhost -d master -U SA -P root -Q "SELECT * FROM <table_name>"
+      - run: sqlcmd -S localhost -d master -U sa -P root -Q "SELECT * FROM <table_name>"
       - run: docker build -t this .
-      - run: docker run -e URL=localhost -e USERNAME=SA -e PASSWORD=root this
-      - run: sqlcmd -S localhost -d master -U SA -P root -Q "SELECT * FROM <table_name>"
+      - run: docker run -e URL=localhost -e USERNAME=sa -e PASSWORD=root this
+      - run: sqlcmd -S localhost -d master -U sa -P root -Q "SELECT * FROM <table_name>"
