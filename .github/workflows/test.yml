@@ -15,7 +15,7 @@ jobs:
       - run: docker ps
       - run: docker logs sql1
       - run: nc -zv localhost 1433
-      - run: sqlcmd -S localhost -d master -U sa -P "rootR00!" -Q "sqlcmd -S ServerName -d DatabaseName -Q "SELECT * FROM INFORMATION_SCHEMA.TABLES"
+      - run: sqlcmd -S localhost -d master -U sa -P "rootR00!" -Q "SELECT * FROM INFORMATION_SCHEMA.TABLES"
       - run: docker build -t this .
       - run: docker run -e URL=localhost -e USERNAME=sa -e PASSWORD=root this
-      - run: sqlcmd -S localhost -d master -U sa -P "rootR00!" -Q "sqlcmd -S ServerName -d DatabaseName -Q "SELECT * FROM INFORMATION_SCHEMA.TABLES"
+      - run: sqlcmd -S localhost -d master -U sa -P "rootR00!" -Q "SELECT * FROM INFORMATION_SCHEMA.TABLES"
