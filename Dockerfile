@@ -15,5 +15,4 @@ RUN mkdir -p $LIQUIBASE_HOME && \
 
 COPY . .
 
-#ENTRYPOINT ["./entrypoint.sh"]
-ENTRYPOINT ["ls"]
+CMD ["/entrypoint.sh"]
