@@ -12,5 +12,4 @@ RUN rm liquibase-${LIQUIBASE_VERSION}.tar.gz
 COPY entrypoint.sh .
 COPY liquibase sql
 
-#ENTRYPOINT ["./entrypoint.sh"]
-ENTRYPOINT ["pwd"]
+ENTRYPOINT ["./entrypoint.sh"]
