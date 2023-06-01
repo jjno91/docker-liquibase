@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - run: docker run -e 'ACCEPT_EULA=Y' -e 'MSSQL_SA_PASSWORD=root' -p 1433:1433 -d --name sql1 --hostname sql1 mcr.microsoft.com/mssql/server:2022-latest
+      - run: docker run -e 'ACCEPT_EULA=Y' -e 'MSSQL_SA_PASSWORD=rootR00!' -p 1433:1433 -d --name sql1 --hostname sql1 mcr.microsoft.com/mssql/server:2022-latest
       - run: docker ps
       - run: docker logs sql1
       - run: nc -zv localhost 1433
@@ -15,7 +15,7 @@ jobs:
       - run: docker ps
       - run: docker logs sql1
       - run: nc -zv localhost 1433
-      - run: sqlcmd -S localhost -d master -U sa -P root -Q "SELECT * FROM <table_name>" || true
+      - run: sqlcmd -S localhost -d master -U sa -P "rootR00!" -Q "SELECT * FROM <table_name>" || true
       - run: docker build -t this .
       - run: docker run -e URL=localhost -e USERNAME=sa -e PASSWORD=root this
-      - run: sqlcmd -S localhost -d master -U sa -P root -Q "SELECT * FROM <table_name>" || true
+      - run: sqlcmd -S localhost -d master -U sa -P "rootR00!" -Q "SELECT * FROM <table_name>" || true
