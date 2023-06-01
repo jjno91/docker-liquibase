@@ -1,4 +1,5 @@
 --liquibase formatted sql
+-- dialect: tsql
 
 --changeset root:2
 create table temp2 (
