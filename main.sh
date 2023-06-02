@@ -7,6 +7,7 @@ liquibase update \
           --password "${DATABASE_PASSWORD}" \
           --driver com.microsoft.sqlserver.jdbc.SQLServerDriver \
           --changelog-file liquibase/1-client.sql \
-          --log-level FINE
+          --log-level FINE \
+          -Djavax.net.ssl.trustAll=true
 
 # start your application
