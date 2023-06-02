@@ -2,7 +2,7 @@ FROM node:18
 
 # openjdk is a liquibase dependency
 RUN apt-get update && \
-    apt-get install -y openjdk-11-jdk=11.0.18 && \
+    apt-get install -y openjdk-11-jdk=11.0.18+10-1~deb11u1 && \
     rm -rf /var/lib/apt/lists/*
 
 # https://github.com/liquibase/liquibase/releases
