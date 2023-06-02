@@ -1,0 +1,4 @@
+# placing this file inside the includeAll directory results in a circular reference
+databaseChangeLog:
+  - includeAll:
+      path: sql/
