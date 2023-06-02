@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -ex
 
 # https://www.liquibase.org/get-started/best-practices
 liquibase update \
