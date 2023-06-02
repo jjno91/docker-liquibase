@@ -5,6 +5,6 @@ liquibase update \
           --username "${DATABASE_USERNAME}" \
           --password "${DATABASE_PASSWORD}" \
           --changelog-file=liquibase/1-client.sql \
-          --hub-mode=off
+          --offline
 
 # start your application
