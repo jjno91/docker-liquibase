@@ -1,6 +1,6 @@
 --liquibase formatted sql
 
---changeset test:1
+--changeset anothertest:1
 create table anothertest2 (
     id int primary key not null,
     name varchar(50) not null,
@@ -9,7 +9,7 @@ create table anothertest2 (
     city varchar(30)
 )
 
---changeset test:2
+--changeset anothertest:2
 create table anothertest3 (
     id int primary key not null,
     name varchar(50) not null,
@@ -18,5 +18,5 @@ create table anothertest3 (
     city varchar(30)
 )
 
---changeset test:3
+--changeset anothertest:3
 drop table anothertest3
