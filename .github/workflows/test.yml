@@ -25,3 +25,6 @@ jobs:
       - run: sqlcmd -S localhost -d master -U sa -P "rootR00!" -Q "SELECT * FROM INFORMATION_SCHEMA.TABLES"
       - run: docker run --network host -e DATABASE_ADDRESS=localhost -e DATABASE_PASSWORD=rootR00! -e DATABASE_NAME=master -e DATABASE_ENCRYPT=false this
       - run: sqlcmd -S localhost -d master -U sa -P "rootR00!" -Q "SELECT * FROM INFORMATION_SCHEMA.TABLES"
+      - run: rm sql/*.sql
+      - run: docker run --network host -e DATABASE_ADDRESS=localhost -e DATABASE_PASSWORD=rootR00! -e DATABASE_NAME=master -e DATABASE_ENCRYPT=false this
+      - run: sqlcmd -S localhost -d master -U sa -P "rootR00!" -Q "SELECT * FROM INFORMATION_SCHEMA.TABLES"
