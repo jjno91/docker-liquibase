@@ -1,6 +1,6 @@
 --liquibase formatted sql
 
---changeset root:2
+--changeset client:1
 create table temp2 (
     id int primary key not null,
     name varchar(50) not null,
@@ -9,7 +9,7 @@ create table temp2 (
     city varchar(30)
 )
 
---changeset root:3
+--changeset client:2
 create table temp3 (
     id int primary key not null,
     name varchar(50) not null,
