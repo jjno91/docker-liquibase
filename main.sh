@@ -6,6 +6,7 @@ liquibase update \
           --username "${DATABASE_USERNAME}" \
           --password "${DATABASE_PASSWORD}" \
           --changelog-file liquibase/1-client.sql \
+          --database test \
           --log-level FINE
 
 # start your application
