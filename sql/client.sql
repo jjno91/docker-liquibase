@@ -17,3 +17,6 @@ create table temp3 (
     address2 varchar(50),
     city varchar(30)
 )
+
+--changeset client:3
+drop table temp3
