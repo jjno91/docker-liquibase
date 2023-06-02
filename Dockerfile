@@ -1,5 +1,10 @@
 FROM node:18
 
+# openjdk is a liquibase dependency
+RUN apt-get update && \
+    apt-get install -y openjdk-11-jdk && \
+    rm -rf /var/lib/apt/lists/*
+
 # https://github.com/liquibase/liquibase/releases
 ENV LIQUIBASE_VERSION=4.21.1
 ENV LIQUIBASE_HOME=/opt/liquibase
