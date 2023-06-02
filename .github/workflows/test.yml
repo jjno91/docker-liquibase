@@ -21,5 +21,5 @@ jobs:
       - run: docker logs sql1
       - run: nc -zv localhost 1433
       - run: sqlcmd -S localhost -d master -U sa -P "rootR00!" -Q "SELECT * FROM INFORMATION_SCHEMA.TABLES"
-      - run: docker run --network host -e DATABASE_ADDRESS=localhost -e DATABASE_USERNAME=sa -e DATABASE_PASSWORD=root -e DATABASE_NAME=master this
+      - run: docker run --network host -e DATABASE_ADDRESS=localhost -e DATABASE_USERNAME=sa -e DATABASE_PASSWORD=rootR00! -e DATABASE_NAME=master this
       - run: sqlcmd -S localhost -d master -U sa -P "rootR00!" -Q "SELECT * FROM INFORMATION_SCHEMA.TABLES"
