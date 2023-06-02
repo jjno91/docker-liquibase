@@ -10,16 +10,16 @@ jobs:
       - run: docker run -e 'ACCEPT_EULA=Y' -e 'MSSQL_SA_PASSWORD=rootR00!' -p 1433:1433 -d --name sql1 --hostname sql1 mcr.microsoft.com/mssql/server:2022-latest
       - run: docker ps
       - run: docker logs sql1
-      - run: nc -zv localhost 1433
+      - run: nc -zv sql1 1433
       - run: sleep 20
       - run: docker ps
       - run: docker logs sql1
-      - run: nc -zv localhost 1433
-      - run: sqlcmd -S localhost -d master -U sa -P "rootR00!" -Q "SELECT * FROM INFORMATION_SCHEMA.TABLES"
+      - run: nc -zv sql1 1433
+      - run: sqlcmd -S sql1 -d master -U sa -P "rootR00!" -Q "SELECT * FROM INFORMATION_SCHEMA.TABLES"
       - run: docker build -t this .
       - run: docker ps
       - run: docker logs sql1
-      - run: nc -zv localhost 1433
-      - run: sqlcmd -S localhost -d master -U sa -P "rootR00!" -Q "SELECT * FROM INFORMATION_SCHEMA.TABLES"
-      - run: docker run -e DATABASE_ADDRESS=localhost -e DATABASE_USERNAME=sa -e DATABASE_PASSWORD=root -e DATABASE_NAME=master this
-      - run: sqlcmd -S localhost -d master -U sa -P "rootR00!" -Q "SELECT * FROM INFORMATION_SCHEMA.TABLES"
+      - run: nc -zv sql1 1433
+      - run: sqlcmd -S sql1 -d master -U sa -P "rootR00!" -Q "SELECT * FROM INFORMATION_SCHEMA.TABLES"
+      - run: docker run -e DATABASE_ADDRESS=sql1 -e DATABASE_USERNAME=sa -e DATABASE_PASSWORD=root -e DATABASE_NAME=master this
+      - run: sqlcmd -S sql1 -d master -U sa -P "rootR00!" -Q "SELECT * FROM INFORMATION_SCHEMA.TABLES"
